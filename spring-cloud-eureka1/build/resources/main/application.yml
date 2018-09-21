@@ -1,0 +1,13 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: eureka1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.64.24.20:7001/eureka/
+    
+management:
+  security:
+    enabled: false

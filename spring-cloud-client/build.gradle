@@ -1,0 +1,69 @@
+buildscript {
+	repositories {
+		//mavenCentral();
+		maven { 
+      	url "http://172.16.1.188:8082/content/groups/public" 
+      }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+	}
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+
+repositories {
+    
+    //mavenCentral()
+    maven { 
+      	url "http://172.16.1.188:8082/content/groups/public" 
+      }
+}
+
+jar {
+
+	baseName = 'client'
+	version = '0.1.0'
+}
+
+sourceCompatibility = 1.8
+
+dependencies {
+   
+    
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    
+  
+    
+    //testCompile "org.springframework.boot:spring-boot-starter-test"
+   
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.44'
+    
+     //feign
+    compile "org.springframework.cloud:spring-cloud-starter-feign:1.4.0.RELEASE"
+	compile "io.github.openfeign.form:feign-form:2.1.0"
+	compile "io.github.openfeign.form:feign-form-spring:2.1.0"
+    
+    //swagger
+    compile "io.springfox:springfox-swagger2:2.6.1"
+	compile "io.springfox:springfox-swagger-ui:2.6.1"
+	compile "joda-time:joda-time:2.9.9"
+    
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.3.6.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter', version: '1.3.1.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-hystrix', version: '1.3.1.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix-dashboard
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-hystrix-dashboard', version: '1.3.1.RELEASE'
+		// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE'
+   
+}
+

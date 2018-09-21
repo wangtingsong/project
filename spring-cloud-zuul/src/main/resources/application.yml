@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: gateway-service-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+zuul:
+  prefix: /appservice
+ 
+    
