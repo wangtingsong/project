@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    datasourceb:  
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+      jdbc-url: jdbc:mysql://10.64.24.10:3306/datasourcea?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1
+    datasourcea:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+      jdbc-url: jdbc:mysql://10.64.24.249:3306/datasourceb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1
+    datasourcec:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+      jdbc-url: jdbc:mysql://10.64.24.10:3306/datasourcec?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1
+
